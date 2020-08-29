@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+    web:
+        build: ./conf/php
+        ports:
+            - "80:80"
+        volumes:
+            - ./conf/apache2/sites-available:/etc/apache2/sites-available
+            - ./www:/var/www/html:cached
+        links:
+            - db:db
+
+    db:
+        image: mysql:5.7
+        restart: always
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql-data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: prestashop_dev
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        depends_on:
+          - db
+
+volumes:
+  mysql-data:
