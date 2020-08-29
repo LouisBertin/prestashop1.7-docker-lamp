@@ -1,6 +1,6 @@
 # Prestashop 1.7 docker configuration
 
-Stack defines to run Prestashop 1.7.6.X, you have to download the latest [here](https://www.prestashop.com/en/versions-precedentes) and extract it into the `www` folder.
+Stack defines to run Prestashop 1.7.6.X, you have to download the latest version [here](https://www.prestashop.com/en/previous-versions) and extract it into the `www` folder.
 
 Then, you can follow the Prestashop installer instructions.
 
