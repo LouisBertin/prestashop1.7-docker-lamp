@@ -24,7 +24,12 @@ ADD ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 ## apache modules
 RUN a2enmod rewrite
 
-# composer
+## nodeJs
+
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
+
+## composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"

@@ -2,6 +2,7 @@ version: "3"
 
 services:
     web:
+        container_name: presta_web
         build: ./conf/php
         ports:
             - "80:80"

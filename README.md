@@ -16,8 +16,20 @@ Here is the result provided by the [Prestashop system requirements tool](https:/
 
 Of course you can change everything in the `docker-compose.yml`
 
+
+### Useful commands:
+
+- run container : `docker-compose up -d`
+- stop container : `docker-compose down`
+- rebuild container : `docker-compose up -d --build`
+- enter into web container : `docker exec presta_web bash`
+- compile assets : `npm run build`
+- watch assets changes : `npm run watch`
+
+
 ### General information
 
 - Php 7.3
 - Mysql 5.7
 - Phpmyadmin : latest
+- NodeJs : 12.x
