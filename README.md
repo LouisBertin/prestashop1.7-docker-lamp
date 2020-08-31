@@ -25,6 +25,7 @@ Of course you can change everything in the `docker-compose.yml`
 - enter into web container : `docker exec presta_web bash`
 - compile assets : `npm run build`
 - watch assets changes : `npm run watch`
+- install npm dependencies : ` docker exec -it presta_web npm i --prefix YOUR/FOLDER/PATH`
 
 
 ### General information
