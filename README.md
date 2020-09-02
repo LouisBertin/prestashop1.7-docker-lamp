@@ -22,7 +22,7 @@ Of course you can change everything in the `docker-compose.yml`
 - run container : `docker-compose up -d`
 - stop container : `docker-compose down`
 - rebuild container : `docker-compose up -d --build`
-- enter into web container : `docker exec presta_web bash`
+- enter into web container : `docker exec -it presta_web bash`
 - compile assets : `npm run build`
 - watch assets changes : `npm run watch`
 - install npm dependencies : ` docker exec -it presta_web npm i --prefix YOUR/FOLDER/PATH`
