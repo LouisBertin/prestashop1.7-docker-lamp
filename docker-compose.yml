@@ -13,6 +13,7 @@ services:
             - db:db
 
     db:
+        container_name: presta_db
         image: mysql:5.7
         restart: always
         ports:
