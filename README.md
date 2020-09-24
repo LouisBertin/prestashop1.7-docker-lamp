@@ -31,7 +31,7 @@ Of course you can change everything in the `docker-compose.yml`
 
 ### General information
 
-- Php 7.3
+- Php 7.2
 - Mysql 5.7
 - Phpmyadmin : latest
 - NodeJs : 10.x

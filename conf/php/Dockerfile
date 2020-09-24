@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.2-apache
 
 # update and upgrade
 RUN apt-get update && apt-get upgrade -y
