@@ -18,6 +18,7 @@ RUN pecl install memcached && docker-php-ext-enable memcached
 RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-install opcache
+RUN docker-php-ext-install soap
 
 ADD ./php.ini /usr/local/etc/php/conf.d/app.ini
 ADD ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
