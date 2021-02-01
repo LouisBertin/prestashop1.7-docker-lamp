@@ -31,5 +31,13 @@ services:
         depends_on:
           - db
 
+    mailcatcher:
+        image: dockage/mailcatcher:0.7.1
+        ports:
+            - "1080:1080"
+            - "1025:1025"
+        links:
+            - web
+
 volumes:
   mysql-data:

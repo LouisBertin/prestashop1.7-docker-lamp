@@ -1,6 +1,6 @@
 # Prestashop 1.7 docker configuration
 
-Stack defines to run Prestashop 1.7.6.X, you have to download the latest stable version [here](https://www.prestashop.com/en/previous-versions) and extract it into the `www` folder.
+Stack defines to run Prestashop 1.7.6.X, you have to download the latest stable version [here](https://www.prestashop.com/en/previous-versions) and extract it into the `www` folder or use the Prestashop repository on [Github](https://github.com/PrestaShop/PrestaShop/tags)
 
 Then, you can follow the Prestashop installer instructions.
 
@@ -26,12 +26,20 @@ Of course you can change everything in the `docker-compose.yml`
 - install npm dependencies : `docker exec -it presta_web npm i --prefix YOUR/FOLDER/PATH`
 - build assets with npm : `docker exec -it presta_web run build --prefix YOUR/FOLDER/PATH`
 - watch assets with npm : `docker exec -it presta_web run build --prefix YOUR/FOLDER/PATH`
-- database dump : `docker exec -it presta_db mysqldump -u root --password=root YOUR_DB_NAME --compact > YOUR_BACKUP.sql`
+- database dump : `docker exec -it presta_db mysqldump --single-transaction -u root --password=root YOUR_DB_NAME > YOUR_BACKUP.sql`
 
+
+### Mailcatcher
+
+You can see all the email send by Prestashop on the Mailcatcher web interface : http://localhost:1080.
+Here is the Prestashop SMTP configuration for MailCatcher and Docker :
+
+![MailCatcher configuration](https://upload.vaa.red/i/7pery.png)
 
 ### General information
 
-- Php 7.2
-- Mysql 5.7
+- Php : 7.2
+- Mysql : 5.7
 - Phpmyadmin : latest
 - NodeJs : 10.x
+- MailCatcher : 0.7.1
