@@ -25,7 +25,7 @@ services:
             - fix-name-volume:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: ${PROJECT_NAME}_dev
+            MYSQL_DATABASE: ${PROJECT_NAME}
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin

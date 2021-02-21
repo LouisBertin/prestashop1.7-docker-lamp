@@ -11,6 +11,7 @@ Here is the result provided by the [Prestashop system requirements tool](https:/
 ### ⚠️ Prestashop DB credentials during installation
 
 - host: db
+- database: the name entered in the `.env` file
 - user: root
 - pwd: root
 
@@ -19,6 +20,7 @@ Of course you can change everything in the `docker-compose.yml`
 ### ⚠️ Before anything else
 
 - Duplicate `.env.dist` to `.env` and change credentials inside.
+- Create a `www` folder
 
 ### Useful commands:
 
@@ -46,3 +48,5 @@ Here is the Prestashop SMTP configuration for MailCatcher and Docker :
 - Phpmyadmin : latest
 - NodeJs : 10.x
 - MailCatcher : 0.7.1
+
+ℹ️ If your project is managed by VCS (Git), you can find your `composer.json` and `composer.json.lock` on the [official Prestashop Github Repository](https://github.com/PrestaShop/PrestaShop/tags)
