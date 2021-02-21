@@ -1,6 +1,6 @@
 # Prestashop 1.7 docker configuration
 
-Stack defines to run Prestashop 1.7.6.X, you have to download the latest stable version [here](https://www.prestashop.com/en/previous-versions) and extract it into the `www` folder or use the Prestashop repository on [Github](https://github.com/PrestaShop/PrestaShop/tags)
+Stack defines to run Prestashop 1.7.6.X/1.7.7.X, you have to download the latest stable version [here](https://www.prestashop.com/en/previous-versions) and extract it into the `www` folder or use the Prestashop repository on [Github](https://github.com/PrestaShop/PrestaShop/tags)
 
 Then, you can follow the Prestashop installer instructions.
 
@@ -38,7 +38,7 @@ Here is the Prestashop SMTP configuration for MailCatcher and Docker :
 
 ### General information
 
-- Php : 7.2
+- Php : 7.3 by default. Customizable in the `docker-compose.yml` file
 - Mysql : 5.7
 - Phpmyadmin : latest
 - NodeJs : 10.x
