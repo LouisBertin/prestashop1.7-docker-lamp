@@ -2,7 +2,7 @@ version: "3"
 
 services:
     web:
-        container_name: presta_web
+        container_name: ${PROJECT_NAME}_web
         build:
             context: ./conf/php
             args:
@@ -16,16 +16,16 @@ services:
             - db:db
 
     db:
-        container_name: presta_db
+        container_name: ${PROJECT_NAME}_db
         image: mysql:5.7
         restart: always
         ports:
             - "3306:3306"
         volumes:
-            - mysql-data:/var/lib/mysql
+            - fix-name-volume:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: prestashop_dev
+            MYSQL_DATABASE: ${PROJECT_NAME}_dev
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -43,4 +43,6 @@ services:
             - web
 
 volumes:
-  mysql-data:
+  fix-name-volume:
+        name: ${PROJECT_NAME}-data # Real ending name
+        external: false
