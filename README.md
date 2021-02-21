@@ -16,6 +16,9 @@ Here is the result provided by the [Prestashop system requirements tool](https:/
 
 Of course you can change everything in the `docker-compose.yml`
 
+### ⚠️ Before anything else
+
+- Duplicate `.env.dist` to `.env` and change credentials inside.
 
 ### Useful commands:
 
