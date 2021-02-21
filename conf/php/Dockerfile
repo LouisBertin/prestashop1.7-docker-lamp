@@ -1,4 +1,5 @@
-FROM php:7.2-apache
+ARG PHP_VERSION
+FROM php:${PHP_VERSION}-apache
 
 # update and upgrade
 RUN apt-get update && apt-get upgrade -y

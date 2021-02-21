@@ -3,7 +3,10 @@ version: "3"
 services:
     web:
         container_name: presta_web
-        build: ./conf/php
+        build:
+            context: ./conf/php
+            args:
+                PHP_VERSION: '7.3'
         ports:
             - "80:80"
         volumes:
