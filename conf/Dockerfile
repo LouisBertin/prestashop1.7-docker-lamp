@@ -8,9 +8,9 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get install apt-utils -y
 
 # Php extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-RUN install-php-extensions intl bcmath gd pdo_mysql pdo_pgsql opcache uuid exif pcntl zip
-
 COPY php.ini /usr/local/etc/php/conf.d/app.ini
+
+RUN install-php-extensions opcache exif zip intl bcmath gd pdo_mysql mysqli imagick memcached  
 
 ## Apache
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
