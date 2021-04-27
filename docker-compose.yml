@@ -4,14 +4,13 @@ services:
     web:
         container_name: ${PROJECT_NAME}_web
         build:
-            context: ./conf/php
+            context: ./conf
             args:
                 PHP_VERSION: '7.3'
         ports:
             - "80:80"
         volumes:
-            - ./conf/apache2/sites-available:/etc/apache2/sites-available
-            - ./www:/var/www/html:cached
+            - ./www:/app:delegated
         links:
             - db:db
 
