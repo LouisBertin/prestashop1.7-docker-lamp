@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get install apt-utils -y
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY php.ini /usr/local/etc/php/conf.d/app.ini
 
-RUN install-php-extensions opcache exif zip intl bcmath gd pdo_mysql mysqli imagick memcached @composer-2
+RUN install-php-extensions opcache exif zip intl bcmath gd pdo_mysql mysqli imagick memcached soap @composer-2
 
 ## Apache
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
