@@ -1,6 +1,8 @@
 ARG PHP_VERSION
 FROM php:${PHP_VERSION}-apache
 
+ARG NODEJS_VERSION
+
 WORKDIR /app
 
 # update & upgrade
@@ -18,6 +20,6 @@ RUN a2enmod rewrite
 RUN chown -R www-data:www-data /app
 
 # Install nodeJS
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_$NODEJS_VERSION.x | bash - && apt-get install -y nodejs
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND

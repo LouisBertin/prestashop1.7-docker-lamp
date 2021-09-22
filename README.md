@@ -76,7 +76,7 @@ Here is the Prestashop SMTP configuration for MailCatcher and Docker :
 - Php : 7.3 by default. Customizable in the `docker-compose.yml` file
 - Mysql : 5.7
 - Phpmyadmin : latest
-- NodeJs : 10.x
+- NodeJs : 10.x by default. Customizable in the `docker-compose.yml` file
 - MailCatcher : 0.7.1
 
 ℹ️ If your project is managed by VCS (Git), you can find your `composer.json` and `composer.json.lock` on the [official Prestashop Github Repository](https://github.com/PrestaShop/PrestaShop/tags)
