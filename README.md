@@ -22,16 +22,46 @@ Of course you can change everything in the `docker-compose.yml`
 - Duplicate `.env.dist` to `.env` and change credentials inside.
 - Create a `www` folder
 
+### ⚠️ macOS users - enable NFS
+
+If you need to speed up your web container, I advice you to enable NFS on your mac and in the `docker-compose.yml`
+```yml
+services:
+    web:
+        container_name: ${PROJECT_NAME}_web
+        build:
+            context: ./conf
+            args:
+                PHP_VERSION: '7.3'
+        ports:
+            - "80:80"
+        volumes:
+            - nfsmount:/app/
+        links:
+            - db:db
+
+volumes:
+  nfsmount:
+      driver: local
+      driver_opts:
+          type: nfs
+          o: addr=host.docker.internal,rw,nolock,hard,nointr,nfsvers=3
+          device: ":${PWD}/www"
+```
+
+If you need more informations about NFS, you can read the excellent article about this topic written by Jeff Geerling : https://www.jeffgeerling.com/blog/2020/revisiting-docker-macs-performance-nfs-volumes
+
+
 ### Useful commands:
 
 - run container : `docker-compose up -d`
 - stop container : `docker-compose down`
 - rebuild container : `docker-compose up -d --build`
-- enter into web container : `docker exec -it presta_web bash`
-- install npm dependencies : `docker exec -it presta_web npm i --prefix YOUR/FOLDER/PATH`
-- build assets with npm : `docker exec -it presta_web run build --prefix YOUR/FOLDER/PATH`
-- watch assets with npm : `docker exec -it presta_web run build --prefix YOUR/FOLDER/PATH`
-- database dump : `docker exec -it presta_db mysqldump --single-transaction -u root --password=root YOUR_DB_NAME > YOUR_BACKUP.sql`
+- enter into web container : `docker exec -it ${PROJECT_NAME}_web bash`
+- install npm dependencies : `docker exec -it ${PROJECT_NAME}_web npm i --prefix YOUR/FOLDER/PATH`
+- build assets with npm : `docker exec -it ${PROJECT_NAME}_web run build --prefix YOUR/FOLDER/PATH`
+- watch assets with npm : `docker exec -it ${PROJECT_NAME}_web run build --prefix YOUR/FOLDER/PATH`
+- database dump : `docker exec -it ${PROJECT_NAME}_db mysqldump --single-transaction -u root --password=root YOUR_DB_NAME > YOUR_BACKUP.sql`
 
 
 ### Mailcatcher
