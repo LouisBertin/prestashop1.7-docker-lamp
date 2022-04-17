@@ -6,8 +6,8 @@ services:
         build:
             context: ./conf
             args:
-                PHP_VERSION: 7.3
-                NODEJS_VERSION: 10
+                PHP_VERSION: ${PHP_VERSION}
+                NODEJS_VERSION: ${NODEJS_VERSION}
         ports:
             - "80:80"
         volumes:
