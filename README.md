@@ -69,7 +69,7 @@ If you need more informations about NFS, you can read the excellent article abou
 You can see all the email send by Prestashop on the Mailcatcher web interface : http://localhost:1080.
 Here is the Prestashop SMTP configuration for MailCatcher and Docker :
 
-![MailCatcher configuration](https://upload.vaa.red/i/7pery.png)
+<img width="1511" alt="mailcatcher" src="https://user-images.githubusercontent.com/22589554/189415670-9eb4e5df-d087-4db7-855c-85839f6379be.png">
 
 ### General information
 
