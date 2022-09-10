@@ -11,7 +11,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - ./www:/app:delegated
+            - ./www:/app:cached
         links:
             - db:db
 
