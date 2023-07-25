@@ -26,7 +26,7 @@ Of course you can change everything in the `docker-compose.yml`
 
 You can use OrbStack instead of NFS and Docker Desktop : https://orbstack.dev/
 
-### ⚠️ macOS users - enable NFS
+### ⚠️ macOS users - enable NFS - (old method)
 
 If you need to speed up your web container, I advice you to enable NFS on your mac and in the `docker-compose.yml`
 ```yml
