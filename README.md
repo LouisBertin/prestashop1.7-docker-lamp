@@ -6,7 +6,7 @@ Then, you can follow the Prestashop installer instructions.
 
 Here is the result provided by the [Prestashop system requirements tool](https://devdocs.prestashop.com/1.7/basics/installation/system-requirements/) : 
 
-![Prestashop system requirements](https://upload.vaa.red/i/JvmeY.png)
+![Prestashop system requirements](https://github.com/LouisBertin/prestashop1.7-docker-lamp/assets/22589554/954387fa-47d9-4494-a964-5bdd9918b3a1)
 
 ### ⚠️ Prestashop DB credentials during installation
 
